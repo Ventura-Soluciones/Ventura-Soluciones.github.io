@@ -1,3 +1,0 @@
-// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
-sap.ui.define(["sap/tnt/NavigationList","sap/ui/model/Filter","sap/ui/model/FilterOperator","sap/ushell/components/shell/SideNavigation/modules/Spaces"],function(e,t,s,o){"use strict";class i{constructor(i){this.oRootItem=new e;this.oSpaces=new o(i);this.pSpaces=this.oSpaces.getRootItem().then(e=>{const o=e.getBindingInfo("items");o.filters=[new t("type",s.NE,"separator")];Object.keys(e.getOwnModels()).forEach(t=>{this.oRootItem.setModel(e.getModel(t),t)});this.oRootItem.bindAggregation("items",o);return this.oSpaces})}async getRootItem(){return this.oRootItem}async findSelectedKey(){return(await this.pSpaces).findSelectedKey(this.oRootItem)}}return i},false);
-//# sourceMappingURL=SpacesNavigationListProvider.js.map

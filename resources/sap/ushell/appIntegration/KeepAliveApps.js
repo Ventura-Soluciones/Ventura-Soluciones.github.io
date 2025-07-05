@@ -1,3 +1,0 @@
-// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
-sap.ui.define([],function(){"use strict";function t(){var t={};this._clean=function(){t={}};this.get=function(n){if(n&&t.hasOwnProperty(n)){return t[n]}return undefined};this.set=function(n,e){if(n){t[n]=e}};this.removeById=function(n){if(n&&t.hasOwnProperty(n)){delete t[n]}};this.removeByContainer=function(t,n){this.forEach((e,i)=>{if(e.container===t){if(n){n(e)}this.removeById(i)}})};this.forEach=function(n){Object.keys(t).forEach(function(e){n.apply(this,[t[e],e,this])})};this.length=function(){return Object.keys(t).length}}return new t});
-//# sourceMappingURL=KeepAliveApps.js.map

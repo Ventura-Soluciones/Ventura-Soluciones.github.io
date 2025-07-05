@@ -1,6 +1,0 @@
-/*!
- * SAP UI development toolkit for HTML5 (SAPUI5)
- *  * (c) Copyright 2009-2025 SAP SE. All rights reserved
- */
-sap.ui.define(["sap/m/Button","sap/m/library","sap/m/Text","./BaseSettingsPanel","./utils/Constants"],function(t,n,e,s,i){"use strict";function o(t){return t&&t.__esModule&&typeof t.default!=="undefined"?t.default:t}const d=n["ButtonType"];const a=o(s);const r=i["CONTENT_ADDITION_PANEL_TYPES"];const u=a.extend("sap.cux.home.InsightsAdditionPanel",{init:function n(){a.prototype.init.call(this);this.setProperty("key",r.AI_INSIGHTS_CARDS);this.setProperty("title",this._i18nBundle.getText("insightsCards"));this.addCardsButton=new t(`${this.getId()}-add-cards-btn`,{text:this._i18nBundle.getText("addFromInsightsDialogBtn"),type:d.Emphasized,press:this.onPressAddCards.bind(this)});this.addActionButton(this.addCardsButton);this._setupContent();this.attachEvent("onDialogClose",this.onDilaogClose.bind(this))},_setupContent:function t(){const n=new e(`${this.getId()}-dummy-text`,{text:this._i18nBundle.getText("insightsCards")});this.addAggregation("content",n)},isSupported:function t(){try{return Promise.resolve(true)}catch(t){return Promise.reject(t)}},onPressAddCards:function t(){},onDilaogClose:function t(){}});return u});
-//# sourceMappingURL=InsightsAdditionPanel.js.map

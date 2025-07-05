@@ -1,3 +1,0 @@
-// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
-sap.ui.define(["sap/ushell/Container","sap/ushell/utils/WindowUtils"],function(e,a){"use strict";class t{_performNavigation(a){return e.getServiceAsync("Navigation").then(function(e){const t={};a.parameters?.forEach(function(e){if(e.name&&e.value){t[e.name]=[e.value]}});e.navigate({target:{semanticObject:a.semanticObject,action:a.action,shellHash:a.shellHash},params:t})})}_openURL(e){a.openURL(e.url,"_blank")}navigate(e){if(e.type==="IBN"){this._performNavigation(e.target)}else if(e.type==="URL"){this._openURL(e.target)}}}return t},false);
-//# sourceMappingURL=NavigationHelper.js.map
