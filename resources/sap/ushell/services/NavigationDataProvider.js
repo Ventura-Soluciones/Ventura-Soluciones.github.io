@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ushell/resources","sap/ushell/utils"],(t,s)=>{"use strict";function e(){this.S_COMPONENT_NAME="sap.ushell.services.NavigationDataProvider";this._init.apply(this,arguments)}e.prototype._init=function(t,s){this.oAdapter=t};e.prototype.getNavigationData=function(){return new Promise((e,i)=>{const a=this.oAdapter.getSystemAliases&&this.oAdapter.getSystemAliases()||{};s.promisify(this.oAdapter.getInbounds()).then(t=>{e({systemAliases:a,inbounds:t})}).catch(s=>{const e={component:this.S_COMPONENT_NAME,description:t.i18n.getText("NavigationDataProvider.CannotLoadData"),detail:s};i(e)})})};e.hasNoAdapter=false;return e});
+//# sourceMappingURL=NavigationDataProvider.js.map

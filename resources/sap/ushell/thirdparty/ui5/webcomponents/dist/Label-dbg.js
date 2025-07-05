@@ -1,0 +1,75 @@
+/*!
+ * Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+ */
+sap.ui.define([
+  "sap/ui/core/webc/WebComponent",
+  "sap/ui/core/LabelEnablement",
+  "sap/ushell/thirdparty/ui5/webcomponents",
+  "sap/ushell/thirdparty/Label",
+], function(
+  WebComponentBaseClass,
+  LabelEnablement,
+) {
+  "use strict";
+
+  const WrapperClass = WebComponentBaseClass.extend("@ui5/webcomponents.Label", {
+    metadata:
+{
+  "namespace": "@ui5/webcomponents",
+  "tag": "ui5-label-16d3c820",
+  "interfaces": [
+    "sap.ui.core.Label"
+  ],
+  "properties": {
+    "showColon": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "required": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "wrappingType": {
+      "type": "@ui5/webcomponents.WrappingType",
+      "mapping": "property",
+      "defaultValue": "Normal"
+    },
+    "text": {
+      "type": "string",
+      "mapping": "textContent"
+    },
+    "width": {
+      "type": "sap.ui.core.CSSSize",
+      "mapping": "style"
+    },
+    "height": {
+      "type": "sap.ui.core.CSSSize",
+      "mapping": "style"
+    }
+  },
+  "aggregations": [],
+  "associations": {
+    "labelFor": {
+      "type": "sap.ui.core.Control",
+      "multiple": false,
+      "mapping": {
+        "type": "property",
+        "to": "for"
+      }
+    }
+  },
+  "events": {},
+  "getters": [],
+  "methods": [],
+  "defaultAggregation": "content",
+  "library": "@ui5/webcomponents.library",
+  "designtime": "@ui5/webcomponents/designtime/Label.designtime"
+}
+  });
+  LabelEnablement.enrich(WrapperClass.prototype);
+
+  return WrapperClass;
+
+});

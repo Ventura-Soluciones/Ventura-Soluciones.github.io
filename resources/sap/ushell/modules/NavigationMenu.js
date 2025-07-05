@@ -1,0 +1,3 @@
+// Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+sap.ui.define(["sap/ushell/Config"],function(i){"use strict";const e={Docked:"Docked",Popover:"Popover"};class o{NavigationMenuMode=e;constructor(){i.emit("/core/sideNavigation/enabled",true)}setNavigationListProvider(e,o){i.emit("/core/sideNavigation/navigationListProvider",{modulePath:e,configuration:JSON.stringify(o||{})})}setFixedNavigationListProvider(e,o){i.emit("/core/sideNavigation/fixedNavigationListProvider",{modulePath:e,configuration:JSON.stringify(o||{})})}setMode(o){if(o!==e.Docked&&o!==e.Popover){throw new Error("Invalid mode: "+o)}i.emit("/core/sideNavigation/mode",o)}}return new o});
+//# sourceMappingURL=NavigationMenu.js.map

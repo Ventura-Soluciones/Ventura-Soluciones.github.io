@@ -1,0 +1,96 @@
+/*!
+ * Copyright (c) 2009-2025 SAP SE, All Rights Reserved
+ */
+sap.ui.define([
+  "sap/ushell/thirdparty/ui5/webcomponents-fiori/dist/NotificationListItemBase",
+  "sap/ushell/thirdparty/ui5/webcomponents-fiori",
+  "sap/ushell/thirdparty/NotificationListItem",
+], function(
+  WebComponentBaseClass,
+) {
+  "use strict";
+
+  const WrapperClass = WebComponentBaseClass.extend("@ui5/webcomponents-fiori.NotificationListItem", {
+    metadata:
+{
+  "namespace": "@ui5/webcomponents-fiori",
+  "tag": "ui5-li-notification-16d3c820",
+  "interfaces": [],
+  "properties": {
+    "wrappingType": {
+      "type": "@ui5/webcomponents.WrappingType",
+      "mapping": "property",
+      "defaultValue": "None"
+    },
+    "state": {
+      "type": "@ui5/webcomponents-base.ValueState",
+      "mapping": "property",
+      "defaultValue": "None"
+    },
+    "showClose": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "importance": {
+      "type": "@ui5/webcomponents-fiori.NotificationListItemImportance",
+      "mapping": "property",
+      "defaultValue": "Standard"
+    },
+    "titleText": {
+      "type": "string",
+      "mapping": "property"
+    },
+    "read": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "loading": {
+      "type": "boolean",
+      "mapping": "property",
+      "defaultValue": false
+    },
+    "loadingDelay": {
+      "type": "float",
+      "mapping": "property",
+      "defaultValue": 1000
+    }
+  },
+  "aggregations": {
+    "avatar": {
+      "type": "sap.ui.core.Control",
+      "multiple": true,
+      "slot": "avatar"
+    },
+    "menu": {
+      "type": "sap.ui.core.Control",
+      "multiple": true,
+      "slot": "menu"
+    },
+    "footnotes": {
+      "type": "sap.ui.core.Control",
+      "multiple": true,
+      "slot": "footnotes"
+    },
+    "description": {
+      "type": "sap.ui.core.Control",
+      "multiple": true
+    }
+  },
+  "associations": {},
+  "events": {
+    "close": {}
+  },
+  "getters": [],
+  "methods": [],
+  "defaultAggregation": "description",
+  "library": "@ui5/webcomponents-fiori.library",
+  "designtime": "@ui5/webcomponents-fiori/designtime/NotificationListItem.designtime"
+}
+  });
+
+
+  return WrapperClass;
+
+});
