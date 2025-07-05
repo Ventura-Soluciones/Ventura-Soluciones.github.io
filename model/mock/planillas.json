@@ -1,0 +1,75 @@
+{
+	"PlanillasCollection": 
+	[
+        {
+            "DocNum": 3,
+            "DocEntry": 3,
+            "U_IDBANCO": "BCP",
+            "U_CCBANCO": "1941985504094",
+            "U_MONEDA": "SOL",
+            "U_ESTADO": "A",
+            "U_FECHA": "2024-02-16T00:00:00Z",
+            "U_TOTAL": 896.36
+        },
+        {
+            "DocNum": 52,
+            "DocEntry": 52,
+            "U_IDBANCO": "BCP",
+            "U_CCBANCO": "1941985504094",
+            "U_MONEDA": "SOL",
+            "U_ESTADO": "E",
+            "U_FECHA": "2024-03-21T00:00:00Z",
+            "U_TOTAL": 2543.55
+        },
+        {
+            "DocNum": 54,
+            "DocEntry": 54,
+            "U_IDBANCO": "BCP",
+            "U_CCBANCO": "1941985504094",
+            "U_MONEDA": "SOL",
+            "U_ESTADO": "E",
+            "U_FECHA": "2024-03-21T00:00:00Z",
+            "U_TOTAL": 19516.06
+        },
+        {
+            "DocNum": 55,
+            "DocEntry": 55,
+            "U_IDBANCO": "BCP",
+            "U_CCBANCO": "1941985504094",
+            "U_MONEDA": "SOL",
+            "U_ESTADO": "E",
+            "U_FECHA": "2024-02-16T00:00:00Z",
+            "U_TOTAL": 608.36
+        },
+        {
+            "DocNum": 51,
+            "DocEntry": 51,
+            "U_IDBANCO": "BCP",
+            "U_CCBANCO": "1941985504094",
+            "U_MONEDA": "SOL",
+            "U_ESTADO": "E",
+            "U_FECHA": "2024-03-21T00:00:00Z",
+            "U_TOTAL": 2880
+        },
+        {
+            "DocNum": 57,
+            "DocEntry": 57,
+            "U_IDBANCO": "BCP",
+            "U_CCBANCO": "1941985504094",
+            "U_MONEDA": "SOL",
+            "U_ESTADO": "C",
+            "U_FECHA": "2025-06-20T00:00:00Z",
+            "U_TOTAL": 0
+        },
+        {
+            "DocNum": 58,
+            "DocEntry": 58,
+            "U_IDBANCO": "BCP",
+            "U_CCBANCO": "1941985504094",
+            "U_MONEDA": "SOL",
+            "U_ESTADO": "C",
+            "U_FECHA": "2025-07-01T00:00:00Z",
+            "U_TOTAL": 2104.99
+        }
+    ]
+}

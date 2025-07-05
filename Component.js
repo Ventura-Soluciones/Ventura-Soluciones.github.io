@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/UIComponent","./model/models","sap/ui/model/json/JSONModel"],function(e,t,n){"use strict";const i=t["createDeviceModel"];const o=e.extend("com.vs.extension.finanb1.Component",{metadata:{manifest:"json",interfaces:["sap.ui.core.IAsyncContentCreation"]},init:function t(){e.prototype.init.call(this);this.setModel(i(),"device");const o=new n({selectedPlanillaId:null,showDetail:false});this.setModel(o,"global");this.getRouter().initialize()}});return o});
+//# sourceMappingURL=Component.js.map

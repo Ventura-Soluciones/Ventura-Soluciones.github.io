@@ -1,0 +1,36 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "John Doe",
+            "email": "admin@company1.com",
+            "password": "123456",
+            "role": "admin",
+            "status": "active",
+            "companies": [
+                {
+                    "id": 1,
+                    "name": "Company 1"
+                },
+                {
+                    "id": 2,
+                    "name": "Company 2"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Jane Smith",
+            "email": "user@company2.com",
+            "password": "123456",
+            "role": "user",
+            "status": "active",
+            "companies": [
+                {
+                    "id": 2,
+                    "name": "Company 2"
+                }
+            ]
+        }
+    ]
+}

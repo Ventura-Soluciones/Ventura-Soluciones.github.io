@@ -1,0 +1,39 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <VBox alignItems="Center" justifyContent="Start" height="100%" class="sapUiMediumMargin">
+        <IllustratedMessage
+            enableVerticalResponsiveness="false"
+            illustrationType="tnt-Document"
+            title="Gestión de Detracciones"
+            description="Administra las detracciones de manera eficiente">
+        </IllustratedMessage>
+        
+        <VBox class="sapUiMediumMarginTop" width="600px">
+            <Title text="Funcionalidades Disponibles" level="H2" class="sapUiMediumMarginBottom"/>
+            <HBox wrap="Wrap" justifyContent="SpaceBetween">
+                <VBox class="sapUiTinyMarginEnd" width="180px">
+                    <HBox alignItems="Center" class="sapUiTinyMarginBottom">
+                        <core:Icon src="sap-icon://document-text" size="1.5rem" class="sapUiTinyMarginEnd"/>
+                        <Text text="Registro" class="sapUiTinyMarginEnd"/>
+                    </HBox>
+                    <Text text="Registra nuevas detracciones en el sistema" class="sapUiTinyMarginBottom"/>
+                </VBox>
+                
+                <VBox class="sapUiTinyMarginEnd" width="180px">
+                    <HBox alignItems="Center" class="sapUiTinyMarginBottom">
+                        <core:Icon src="sap-icon://search" size="1.5rem" class="sapUiTinyMarginEnd"/>
+                        <Text text="Consulta" class="sapUiTinyMarginEnd"/>
+                    </HBox>
+                    <Text text="Consulta el estado de las detracciones" class="sapUiTinyMarginBottom"/>
+                </VBox>
+                
+                <VBox width="180px">
+                    <HBox alignItems="Center" class="sapUiTinyMarginBottom">
+                        <core:Icon src="sap-icon://report" size="1.5rem" class="sapUiTinyMarginEnd"/>
+                        <Text text="Reportes" class="sapUiTinyMarginEnd"/>
+                    </HBox>
+                    <Text text="Genera reportes de detracciones" class="sapUiTinyMarginBottom"/>
+                </VBox>
+            </HBox>
+        </VBox>
+    </VBox>
+</core:FragmentDefinition> 

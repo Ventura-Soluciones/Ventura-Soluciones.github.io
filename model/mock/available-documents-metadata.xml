@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="2.0">
+    <Schema Namespace="FinanB1Model" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      
+      <!-- Entity Type Definition -->
+      <EntityType Name="AvailableDocument">
+        <Key>
+          <PropertyRef Name="DocEntry" />
+        </Key>
+        <Property Name="DocEntry" Type="Edm.Int32" Nullable="false" />
+        <Property Name="DocNum" Type="Edm.String" MaxLength="20" Nullable="true" />
+        <Property Name="CardCode" Type="Edm.String" MaxLength="20" Nullable="true" />
+        <Property Name="CardName" Type="Edm.String" MaxLength="100" Nullable="true" />
+        <Property Name="DocType" Type="Edm.String" MaxLength="20" Nullable="true" />
+        <Property Name="DocDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="DueDate" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="Currency" Type="Edm.String" MaxLength="3" Nullable="true" />
+        <Property Name="Total" Type="Edm.Decimal" Precision="15" Scale="2" Nullable="true" />
+        <Property Name="Balance" Type="Edm.Decimal" Precision="15" Scale="2" Nullable="true" />
+        <Property Name="BankCode" Type="Edm.String" MaxLength="10" Nullable="true" />
+        <Property Name="BankName" Type="Edm.String" MaxLength="50" Nullable="true" />
+        <Property Name="AccountCode" Type="Edm.String" MaxLength="20" Nullable="true" />
+        <Property Name="AccountName" Type="Edm.String" MaxLength="100" Nullable="true" />
+        
+        <!-- SAP Annotations for SmartTable -->
+        <Annotation Term="com.sap.vocabularies.UI.v1.LineItem">
+          <Collection>
+            <Record Type="com.sap.vocabularies.UI.v1.DataField">
+              <PropertyValue Property="Value" Path="DocEntry" />
+              <PropertyValue Property="Label" String="N° Documento" />
+            </Record>
+            <Record Type="com.sap.vocabularies.UI.v1.DataField">
+              <PropertyValue Property="Value" Path="CardCode" />
+              <PropertyValue Property="Label" String="Cód. Proveedor" />
+            </Record>
+            <Record Type="com.sap.vocabularies.UI.v1.DataField">
+              <PropertyValue Property="Value" Path="CardName" />
+              <PropertyValue Property="Label" String="Razón Social" />
+            </Record>
+            <Record Type="com.sap.vocabularies.UI.v1.DataField">
+              <PropertyValue Property="Value" Path="DocType" />
+              <PropertyValue Property="Label" String="Tipo" />
+            </Record>
+            <Record Type="com.sap.vocabularies.UI.v1.DataField">
+              <PropertyValue Property="Value" Path="DocDate" />
+              <PropertyValue Property="Label" String="Fecha Emisión" />
+            </Record>
+            <Record Type="com.sap.vocabularies.UI.v1.DataField">
+              <PropertyValue Property="Value" Path="DueDate" />
+              <PropertyValue Property="Label" String="Fecha Venc." />
+            </Record>
+            <Record Type="com.sap.vocabularies.UI.v1.DataField">
+              <PropertyValue Property="Value" Path="Total" />
+              <PropertyValue Property="Label" String="Total" />
+              <PropertyValue Property="Unit" Path="Currency" />
+            </Record>
+            <Record Type="com.sap.vocabularies.UI.v1.DataField">
+              <PropertyValue Property="Value" Path="Balance" />
+              <PropertyValue Property="Label" String="Saldo" />
+              <PropertyValue Property="Unit" Path="Currency" />
+            </Record>
+            <Record Type="com.sap.vocabularies.UI.v1.DataField">
+              <PropertyValue Property="Value" Path="Currency" />
+              <PropertyValue Property="Label" String="Moneda" />
+            </Record>
+            <Record Type="com.sap.vocabularies.UI.v1.DataField">
+              <PropertyValue Property="Value" Path="BankName" />
+              <PropertyValue Property="Label" String="Banco" />
+            </Record>
+          </Collection>
+        </Annotation>
+        
+        <!-- Selection Fields for SmartTable -->
+        <Annotation Term="com.sap.vocabularies.UI.v1.SelectionFields">
+          <Collection>
+            <PropertyPath>DocEntry</PropertyPath>
+            <PropertyPath>CardCode</PropertyPath>
+            <PropertyPath>DocNum</PropertyPath>
+            <PropertyPath>CardName</PropertyPath>
+            <PropertyPath>DocType</PropertyPath>
+            <PropertyPath>BankCode</PropertyPath>
+            <PropertyPath>Currency</PropertyPath>
+          </Collection>
+        </Annotation>
+        
+        <!-- Header Info for SmartTable -->
+        <Annotation Term="com.sap.vocabularies.UI.v1.HeaderInfo">
+          <Record Type="com.sap.vocabularies.UI.v1.HeaderInfoType">
+            <PropertyValue Property="TypeName" String="Documento" />
+            <PropertyValue Property="TypeNamePlural" String="Documentos" />
+            <PropertyValue Property="Title">
+              <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                <PropertyValue Property="Value" Path="DocNum" />
+              </Record>
+            </PropertyValue>
+            <PropertyValue Property="Description">
+              <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                <PropertyValue Property="Value" Path="CardName" />
+              </Record>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+        
+        <!-- Facets for SmartTable -->
+        <Annotation Term="com.sap.vocabularies.UI.v1.Facets">
+          <Collection>
+            <Record Type="com.sap.vocabularies.UI.v1.ReferenceFacet">
+              <PropertyValue Property="Label" String="Información General" />
+              <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.FieldGroup#General" />
+            </Record>
+            <Record Type="com.sap.vocabularies.UI.v1.ReferenceFacet">
+              <PropertyValue Property="Label" String="Información Bancaria" />
+              <PropertyValue Property="Target" AnnotationPath="@com.sap.vocabularies.UI.v1.FieldGroup#Banking" />
+            </Record>
+          </Collection>
+        </Annotation>
+        
+        <!-- Field Groups -->
+        <Annotation Term="com.sap.vocabularies.UI.v1.FieldGroup#General">
+          <Record Type="com.sap.vocabularies.UI.v1.FieldGroupType">
+            <PropertyValue Property="Data">
+              <Collection>
+                <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                  <PropertyValue Property="Value" Path="DocEntry" />
+                  <PropertyValue Property="Label" String="N° Documento" />
+                </Record>
+                <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                  <PropertyValue Property="Value" Path="DocNum" />
+                  <PropertyValue Property="Label" String="Número" />
+                </Record>
+                <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                  <PropertyValue Property="Value" Path="CardCode" />
+                  <PropertyValue Property="Label" String="Código Proveedor" />
+                </Record>
+                <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                  <PropertyValue Property="Value" Path="CardName" />
+                  <PropertyValue Property="Label" String="Razón Social" />
+                </Record>
+                <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                  <PropertyValue Property="Value" Path="DocType" />
+                  <PropertyValue Property="Label" String="Tipo" />
+                </Record>
+                <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                  <PropertyValue Property="Value" Path="DocDate" />
+                  <PropertyValue Property="Label" String="Fecha Emisión" />
+                </Record>
+                <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                  <PropertyValue Property="Value" Path="DueDate" />
+                  <PropertyValue Property="Label" String="Fecha Vencimiento" />
+                </Record>
+              </Collection>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+        
+        <Annotation Term="com.sap.vocabularies.UI.v1.FieldGroup#Banking">
+          <Record Type="com.sap.vocabularies.UI.v1.FieldGroupType">
+            <PropertyValue Property="Data">
+              <Collection>
+                <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                  <PropertyValue Property="Value" Path="Total" />
+                  <PropertyValue Property="Label" String="Total" />
+                  <PropertyValue Property="Unit" Path="Currency" />
+                </Record>
+                <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                  <PropertyValue Property="Value" Path="Balance" />
+                  <PropertyValue Property="Label" String="Saldo" />
+                  <PropertyValue Property="Unit" Path="Currency" />
+                </Record>
+                <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                  <PropertyValue Property="Value" Path="Currency" />
+                  <PropertyValue Property="Label" String="Moneda" />
+                </Record>
+                <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                  <PropertyValue Property="Value" Path="BankCode" />
+                  <PropertyValue Property="Label" String="Código Banco" />
+                </Record>
+                <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                  <PropertyValue Property="Value" Path="BankName" />
+                  <PropertyValue Property="Label" String="Nombre Banco" />
+                </Record>
+                <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                  <PropertyValue Property="Value" Path="AccountCode" />
+                  <PropertyValue Property="Label" String="Código Cuenta" />
+                </Record>
+                <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                  <PropertyValue Property="Value" Path="AccountName" />
+                  <PropertyValue Property="Label" String="Nombre Cuenta" />
+                </Record>
+              </Collection>
+            </PropertyValue>
+          </Record>
+        </Annotation>
+        
+      </EntityType>
+      
+      <!-- Entity Set -->
+      <EntityContainer Name="FinanB1Service" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="AvailableDocuments" EntityType="FinanB1Model.AvailableDocument">
+          <Annotation Term="com.sap.vocabularies.UI.v1.LineItem">
+            <Collection>
+              <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                <PropertyValue Property="Value" Path="DocEntry" />
+                <PropertyValue Property="Label" String="N° Documento" />
+              </Record>
+              <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                <PropertyValue Property="Value" Path="CardCode" />
+                <PropertyValue Property="Label" String="Cód. Proveedor" />
+              </Record>
+              <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                <PropertyValue Property="Value" Path="CardName" />
+                <PropertyValue Property="Label" String="Razón Social" />
+              </Record>
+              <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                <PropertyValue Property="Value" Path="DocType" />
+                <PropertyValue Property="Label" String="Tipo" />
+              </Record>
+              <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                <PropertyValue Property="Value" Path="DocDate" />
+                <PropertyValue Property="Label" String="Fecha Emisión" />
+              </Record>
+              <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                <PropertyValue Property="Value" Path="DueDate" />
+                <PropertyValue Property="Label" String="Fecha Venc." />
+              </Record>
+              <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                <PropertyValue Property="Value" Path="Total" />
+                <PropertyValue Property="Label" String="Total" />
+                <PropertyValue Property="Unit" Path="Currency" />
+              </Record>
+              <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                <PropertyValue Property="Value" Path="Balance" />
+                <PropertyValue Property="Label" String="Saldo" />
+                <PropertyValue Property="Unit" Path="Currency" />
+              </Record>
+              <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                <PropertyValue Property="Value" Path="Currency" />
+                <PropertyValue Property="Label" String="Moneda" />
+              </Record>
+              <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                <PropertyValue Property="Value" Path="BankName" />
+                <PropertyValue Property="Label" String="Banco" />
+              </Record>
+            </Collection>
+          </Annotation>
+          
+          <!-- Selection Fields -->
+          <Annotation Term="com.sap.vocabularies.UI.v1.SelectionFields">
+            <Collection>
+              <PropertyPath>DocEntry</PropertyPath>
+              <PropertyPath>CardCode</PropertyPath>
+              <PropertyPath>DocNum</PropertyPath>
+              <PropertyPath>CardName</PropertyPath>
+              <PropertyPath>DocType</PropertyPath>
+              <PropertyPath>BankCode</PropertyPath>
+              <PropertyPath>Currency</PropertyPath>
+            </Collection>
+          </Annotation>
+          
+          <!-- Header Info -->
+          <Annotation Term="com.sap.vocabularies.UI.v1.HeaderInfo">
+            <Record Type="com.sap.vocabularies.UI.v1.HeaderInfoType">
+              <PropertyValue Property="TypeName" String="Documento" />
+              <PropertyValue Property="TypeNamePlural" String="Documentos" />
+              <PropertyValue Property="Title">
+                <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                  <PropertyValue Property="Value" Path="DocNum" />
+                </Record>
+              </PropertyValue>
+              <PropertyValue Property="Description">
+                <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                  <PropertyValue Property="Value" Path="CardName" />
+                </Record>
+              </PropertyValue>
+            </Record>
+          </Annotation>
+        </EntitySet>
+      </EntityContainer>
+      
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx> 

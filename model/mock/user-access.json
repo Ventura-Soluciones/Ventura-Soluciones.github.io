@@ -1,0 +1,59 @@
+{
+    "userAccess": [
+        {
+            "role": "admin",
+            "permissions": [
+                {
+                    "resourceType": 1, 
+                    "resourceId": "configuracion",
+                    "enable": true
+                },
+                {
+                    "resourceType": 2,
+                    "resourceId": "pagosMasivos",
+                    "enable": true
+                },
+                {
+                    "resourceType": 3,
+                    "resourceId": "detracciones",
+                    "enable": true
+                }
+            ]
+        },
+        {
+            "role": "user",
+            "permissions": [
+                {
+                    "resourceType": 1,
+                    "resourceId": "configuracion",
+                    "enable": false
+                },
+                {
+                    "resourceType": 2,
+                    "resourceId": "pagosMasivos",
+                    "enable": true
+                },
+                {
+                    "resourceType": 3,
+                    "resourceId": "detracciones",
+                    "enable": true
+                }
+            ]
+        },
+        {
+            "role": "jefe-cobranzas",
+            "permissions": [
+                {
+                    "resourceType": 2,
+                    "resourceId": "btnNewPlanillaPM",
+                    "enable": false
+                },
+                {
+                    "resourceType": 4, 
+                    "resourceId": "/api/v1/planilla-pm/create",
+                    "enable": false
+                }
+            ]
+        }        
+    ]
+}

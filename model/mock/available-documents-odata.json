@@ -1,0 +1,217 @@
+{
+    "d": {
+        "results": [
+            {
+                "__metadata": {
+                    "id": "https://services.odata.org/V2/Northwind/Northwind.svc/Products(1)",
+                    "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/Products(1)",
+                    "type": "NorthwindModel.Product"
+                },
+                "DocEntry": 1001,
+                "DocNum": "F001-001",
+                "CardCode": "C001",
+                "CardName": "EMPRESA COMERCIAL ABC S.A.C.",
+                "DocType": "Factura",
+                "DocDate": "/Date(1710374400000)/",
+                "DueDate": "/Date(1713052800000)/",
+                "Currency": "SOL",
+                "Total": 1500.00,
+                "Balance": 1500.00,
+                "BankCode": "BCP",
+                "BankName": "BANCO DE CREDITO",
+                "AccountCode": "1041101",
+                "AccountName": "CUENTA CORRIENTE BCP"
+            },
+            {
+                "__metadata": {
+                    "id": "https://services.odata.org/V2/Northwind/Northwind.svc/Products(2)",
+                    "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/Products(2)",
+                    "type": "NorthwindModel.Product"
+                },
+                "DocEntry": 1002,
+                "DocNum": "F001-002",
+                "CardCode": "C002",
+                "CardName": "DISTRIBUIDORA XYZ E.I.R.L.",
+                "DocType": "Factura",
+                "DocDate": "/Date(1710460800000)/",
+                "DueDate": "/Date(1713139200000)/",
+                "Currency": "SOL",
+                "Total": 2300.50,
+                "Balance": 2300.50,
+                "BankCode": "BCP",
+                "BankName": "BANCO DE CREDITO",
+                "AccountCode": "1041101",
+                "AccountName": "CUENTA CORRIENTE BCP"
+            },
+            {
+                "__metadata": {
+                    "id": "https://services.odata.org/V2/Northwind/Northwind.svc/Products(3)",
+                    "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/Products(3)",
+                    "type": "NorthwindModel.Product"
+                },
+                "DocEntry": 1003,
+                "DocNum": "F001-003",
+                "CardCode": "C003",
+                "CardName": "SERVICIOS INTEGRALES S.A.",
+                "DocType": "Factura",
+                "DocDate": "/Date(1710547200000)/",
+                "DueDate": "/Date(1713225600000)/",
+                "Currency": "SOL",
+                "Total": 850.75,
+                "Balance": 850.75,
+                "BankCode": "BCP",
+                "BankName": "BANCO DE CREDITO",
+                "AccountCode": "1041101",
+                "AccountName": "CUENTA CORRIENTE BCP"
+            },
+            {
+                "__metadata": {
+                    "id": "https://services.odata.org/V2/Northwind/Northwind.svc/Products(4)",
+                    "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/Products(4)",
+                    "type": "NorthwindModel.Product"
+                },
+                "DocEntry": 1004,
+                "DocNum": "F001-004",
+                "CardCode": "C004",
+                "CardName": "CONSTRUCCIONES MODERNAS S.A.C.",
+                "DocType": "Factura",
+                "DocDate": "/Date(1710633600000)/",
+                "DueDate": "/Date(1713312000000)/",
+                "Currency": "SOL",
+                "Total": 4200.00,
+                "Balance": 4200.00,
+                "BankCode": "BCP",
+                "BankName": "BANCO DE CREDITO",
+                "AccountCode": "1041101",
+                "AccountName": "CUENTA CORRIENTE BCP"
+            },
+            {
+                "__metadata": {
+                    "id": "https://services.odata.org/V2/Northwind/Northwind.svc/Products(5)",
+                    "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/Products(5)",
+                    "type": "NorthwindModel.Product"
+                },
+                "DocEntry": 1005,
+                "DocNum": "F001-005",
+                "CardCode": "C005",
+                "CardName": "TECNOLOGIA AVANZADA E.I.R.L.",
+                "DocType": "Factura",
+                "DocDate": "/Date(1710720000000)/",
+                "DueDate": "/Date(1713398400000)/",
+                "Currency": "SOL",
+                "Total": 1800.25,
+                "Balance": 1800.25,
+                "BankCode": "BCP",
+                "BankName": "BANCO DE CREDITO",
+                "AccountCode": "1041101",
+                "AccountName": "CUENTA CORRIENTE BCP"
+            },
+            {
+                "__metadata": {
+                    "id": "https://services.odata.org/V2/Northwind/Northwind.svc/Products(6)",
+                    "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/Products(6)",
+                    "type": "NorthwindModel.Product"
+                },
+                "DocEntry": 1006,
+                "DocNum": "F001-006",
+                "CardCode": "C006",
+                "CardName": "IMPORTADORA DEL SUR S.A.",
+                "DocType": "Factura",
+                "DocDate": "/Date(1710806400000)/",
+                "DueDate": "/Date(1713484800000)/",
+                "Currency": "SOL",
+                "Total": 3200.00,
+                "Balance": 3200.00,
+                "BankCode": "BCP",
+                "BankName": "BANCO DE CREDITO",
+                "AccountCode": "1041101",
+                "AccountName": "CUENTA CORRIENTE BCP"
+            },
+            {
+                "__metadata": {
+                    "id": "https://services.odata.org/V2/Northwind/Northwind.svc/Products(7)",
+                    "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/Products(7)",
+                    "type": "NorthwindModel.Product"
+                },
+                "DocEntry": 1007,
+                "DocNum": "F001-007",
+                "CardCode": "C007",
+                "CardName": "LOGISTICA EXPRES S.A.C.",
+                "DocType": "Factura",
+                "DocDate": "/Date(1710892800000)/",
+                "DueDate": "/Date(1713571200000)/",
+                "Currency": "SOL",
+                "Total": 950.50,
+                "Balance": 950.50,
+                "BankCode": "BCP",
+                "BankName": "BANCO DE CREDITO",
+                "AccountCode": "1041101",
+                "AccountName": "CUENTA CORRIENTE BCP"
+            },
+            {
+                "__metadata": {
+                    "id": "https://services.odata.org/V2/Northwind/Northwind.svc/Products(8)",
+                    "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/Products(8)",
+                    "type": "NorthwindModel.Product"
+                },
+                "DocEntry": 1008,
+                "DocNum": "F001-008",
+                "CardCode": "C008",
+                "CardName": "CONSULTORIA EMPRESARIAL S.A.",
+                "DocType": "Factura",
+                "DocDate": "/Date(1710979200000)/",
+                "DueDate": "/Date(1713657600000)/",
+                "Currency": "SOL",
+                "Total": 2800.00,
+                "Balance": 2800.00,
+                "BankCode": "BCP",
+                "BankName": "BANCO DE CREDITO",
+                "AccountCode": "1041101",
+                "AccountName": "CUENTA CORRIENTE BCP"
+            },
+            {
+                "__metadata": {
+                    "id": "https://services.odata.org/V2/Northwind/Northwind.svc/Products(9)",
+                    "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/Products(9)",
+                    "type": "NorthwindModel.Product"
+                },
+                "DocEntry": 1009,
+                "DocNum": "F001-009",
+                "CardCode": "C009",
+                "CardName": "PRODUCTOS NATURALES E.I.R.L.",
+                "DocType": "Factura",
+                "DocDate": "/Date(1711065600000)/",
+                "DueDate": "/Date(1713744000000)/",
+                "Currency": "SOL",
+                "Total": 1650.75,
+                "Balance": 1650.75,
+                "BankCode": "BCP",
+                "BankName": "BANCO DE CREDITO",
+                "AccountCode": "1041101",
+                "AccountName": "CUENTA CORRIENTE BCP"
+            },
+            {
+                "__metadata": {
+                    "id": "https://services.odata.org/V2/Northwind/Northwind.svc/Products(10)",
+                    "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/Products(10)",
+                    "type": "NorthwindModel.Product"
+                },
+                "DocEntry": 1010,
+                "DocNum": "F001-010",
+                "CardCode": "C010",
+                "CardName": "SERVICIOS FINANCIEROS S.A.",
+                "DocType": "Factura",
+                "DocDate": "/Date(1711152000000)/",
+                "DueDate": "/Date(1713830400000)/",
+                "Currency": "SOL",
+                "Total": 4100.00,
+                "Balance": 4100.00,
+                "BankCode": "BCP",
+                "BankName": "BANCO DE CREDITO",
+                "AccountCode": "1041101",
+                "AccountName": "CUENTA CORRIENTE BCP"
+            }
+        ],
+        "__count": 10
+    }
+} 

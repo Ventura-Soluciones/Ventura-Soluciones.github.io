@@ -1,0 +1,23 @@
+{
+	"selectedKey": "configuracion",
+
+	"navigation": [
+		{
+			"key": "configuracion",
+			"text": "Configuración",
+			"icon": "sap-icon://settings"
+		},
+		{
+			"key": "pagosMasivos",
+			"text": "Pagos Masivos",
+			"icon": "sap-icon://money-bills"
+		},
+		{
+			"key": "detracciones",
+			"text": "Detracciones",
+			"icon": "sap-icon://document"
+		}
+	],
+
+	"fixedNavigation": []
+}

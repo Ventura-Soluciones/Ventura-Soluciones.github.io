@@ -1,0 +1,84 @@
+{
+  "mountains": [
+    {
+      "rank": 1,
+      "name": "Mount Everest",
+      "height": 8848,
+      "prominence": 8848,
+      "parent_mountain": false,
+      "first_ascent": "1953-05-29"
+    },
+    {
+      "rank": 2,
+      "name": "K2",
+      "height": 8611,
+      "prominence": 4017,
+      "parent_mountain": true,
+      "first_ascent": "1954-07-31"
+    },
+    {
+      "rank": 3,
+      "name": "Kangchenjunga",
+      "height": 8586,
+      "prominence": 3922,
+      "parent_mountain": true,
+      "first_ascent": "1955-05-25"
+    },
+    {
+      "rank": 4,
+      "name": "Lhotse",
+      "height": 8516,
+      "prominence": 610,
+      "parent_mountain": true,
+      "first_ascent": "1956-05-18"
+    },
+    {
+      "rank": 5,
+      "name": "Makalu",
+      "height": 8485,
+      "prominence": 2378,
+      "parent_mountain": true,
+      "first_ascent": "1955-05-15"
+    },
+    {
+      "rank": 6,
+      "name": "Cho Oyu",
+      "height": 8188,
+      "prominence": 2340,
+      "parent_mountain": true,
+      "first_ascent": "1954-10-19"
+    },
+    {
+      "rank": 7,
+      "name": "Dhaulagiri",
+      "height": 8167,
+      "prominence": 3357,
+      "parent_mountain": true,
+      "first_ascent": "1960-05-13"
+    },
+    {
+      "rank": 8,
+      "name": "Manaslu",
+      "height": 8163,
+      "prominence": 3092,
+      "parent_mountain": true,
+      "first_ascent": "1956-05-09"
+    },
+    {
+      "rank": 9,
+      "name": "Nanga Parbat",
+      "height": 8126,
+      "prominence": 4608,
+      "parent_mountain": true,
+      "first_ascent": "1953-07-03"
+    },
+    {
+      "rank": 10,
+      "name": "Annapurna",
+      "height": 8091,
+      "prominence": 2984,
+      "parent_mountain": true,
+      "first_ascent": "1950-06-03"
+    }
+  ]
+} 

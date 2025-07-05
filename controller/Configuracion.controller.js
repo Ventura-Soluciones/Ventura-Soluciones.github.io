@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/mvc/Controller"],function(n){"use strict";const o=n.extend("com.vs.extension.finanb1.controller.Configuracion",{onInit:function n(){console.log("Configuracion controller initialized")}});return o});
+//# sourceMappingURL=Configuracion.controller.js.map

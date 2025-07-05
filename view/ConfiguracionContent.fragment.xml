@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <VBox alignItems="Center" justifyContent="Start" height="100%" class="sapUiMediumMargin">
+        <IllustratedMessage
+            enableVerticalResponsiveness="false"
+            illustrationType="tnt-Settings"
+            title="Configuración del Sistema"
+            description="Gestiona la configuración del sistema y parámetros de la aplicación">
+        </IllustratedMessage>
+        
+        <VBox class="sapUiMediumMarginTop" width="600px">
+            <Title text="Opciones de Configuración" level="H2" class="sapUiMediumMarginBottom"/>
+            <HBox wrap="Wrap" justifyContent="SpaceBetween">
+                <VBox class="sapUiTinyMarginEnd" width="180px">
+                    <HBox alignItems="Center" class="sapUiTinyMarginBottom">
+                        <core:Icon src="sap-icon://user-settings" size="1.5rem" class="sapUiTinyMarginEnd"/>
+                        <Text text="Usuarios" class="sapUiTinyMarginEnd"/>
+                    </HBox>
+                    <Text text="Gestiona los parámetros del sistema" class="sapUiTinyMarginBottom"/>
+                </VBox>
+                
+                <VBox class="sapUiTinyMarginEnd" width="180px">
+                    <HBox alignItems="Center" class="sapUiTinyMarginBottom">
+                        <core:Icon src="sap-icon://database" size="1.5rem" class="sapUiTinyMarginEnd"/>
+                        <Text text="Base de Datos" class="sapUiTinyMarginEnd"/>
+                    </HBox>
+                    <Text text="Gestiona la actualización de la estructura de datos" class="sapUiTinyMarginBottom"/>
+                </VBox>
+            </HBox>
+        </VBox>
+    </VBox>
+</core:FragmentDefinition> 

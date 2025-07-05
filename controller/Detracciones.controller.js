@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/mvc/Controller"],function(n){"use strict";const e=n.extend("com.vs.extension.finanb1.controller.Detracciones",{onInit:function n(){console.log("Detracciones controller initialized")}});return e});
+//# sourceMappingURL=Detracciones.controller.js.map

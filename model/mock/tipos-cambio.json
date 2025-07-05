@@ -1,0 +1,64 @@
+{
+    "ExchangeRates": [
+        {
+            "Currency": "PEN",
+            "Rate": 1,
+            "Date": "2025-07-02T00:00:00Z"
+        },
+        {
+            "Currency": "EUR",
+            "Rate": 4.20,
+            "Date": "2025-07-02T00:00:00Z"
+        },
+        {
+            "Currency": "USD",
+            "Rate": 3.67,
+            "Date": "2025-07-02T00:00:00Z"
+        },
+        {
+            "Currency": "PEN",
+            "Rate": 1,
+            "Date": "2025-07-02T00:00:00Z"
+        },
+        {
+            "Currency": "EUR",
+            "Rate": 4.20,
+            "Date": "2025-07-01T00:00:00Z"
+        },
+        {
+            "Currency": "USD",
+            "Rate": 3.78,
+            "Date": "2025-07-01T00:00:00Z"
+        },
+        {
+            "Currency": "PEN",
+            "Rate": 1,
+            "Date": "2025-06-30T00:00:00Z"
+        },
+        {
+            "Currency": "USD",
+            "Rate": 3.76,
+            "Date": "2025-06-30T00:00:00Z"
+        },
+        {
+            "Currency": "EUR",
+            "Rate": 4.25,
+            "Date": "2025-06-30T00:00:00Z"
+        },
+        {
+            "Currency": "PEN",
+            "Rate": 1,
+            "Date": "2025-06-29T00:00:00Z"
+        },
+        {
+            "Currency": "USD",
+            "Rate": 3.698,
+            "Date": "2025-06-29T00:00:00Z"
+        },
+        {
+            "Currency": "EUR",
+            "Rate": 4.30,
+            "Date": "2025-06-29T00:00:00Z"
+        }
+    ]
+}

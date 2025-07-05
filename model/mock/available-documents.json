@@ -1,0 +1,250 @@
+{
+    "documents": [
+        {
+            "DocEntry": 1001,
+            "DocType": "Factura",
+            "DocNum": "F001-001",
+            "CardCode": "C001",
+            "CardName": "EMPRESA COMERCIAL ABC S.A.C.",
+            
+            "DocDate": "2024-03-15T00:00:00Z",
+            "DueDate": "2024-04-15T00:00:00Z",
+            "Currency": "SOL",
+            "Total": 1500.00,
+            "Balance": 1500.00,
+            "BankCode": "BCP",
+            "BankName": "BANCO DE CREDITO",
+            "AccountCode": "1041101",
+            "AccountName": "CUENTA CORRIENTE BCP",
+            "CuentaBancaria": "19394614129025"
+        },
+        {
+            "DocEntry": 1002,
+            "DocType": "Factura",
+            "DocNum": "F001-002",
+            "CardCode": "C002",
+            "CardName": "DISTRIBUIDORA XYZ E.I.R.L.",
+            
+            "DocDate": "2024-03-16T00:00:00Z",
+            "DueDate": "2024-04-16T00:00:00Z",
+            "Currency": "SOL",
+            "Total": 2300.50,
+            "Balance": 2300.50,
+            "BankCode": "BCP",
+            "BankName": "BANCO DE CREDITO",
+            "AccountCode": "1041101",
+            "AccountName": "CUENTA CORRIENTE BCP",
+            "CuentaBancaria": "19394614129025"
+        },
+        {
+            "DocEntry": 1003,
+            "DocNum": "F001-003",
+            "DocType": "Factura",
+            "CardCode": "C003",
+            "CardName": "SERVICIOS INTEGRALES S.A.",
+            
+            "DocDate": "2024-03-17T00:00:00Z",
+            "DueDate": "2024-04-17T00:00:00Z",
+            "Currency": "SOL",
+            "Total": 850.75,
+            "Balance": 850.75,
+            "BankCode": "BCP",
+            "BankName": "BANCO DE CREDITO",
+            "AccountCode": "1041101",
+            "AccountName": "CUENTA CORRIENTE BCP",
+            "CuentaBancaria": "19394614129025"
+        },
+        {
+            "DocEntry": 1004,
+            "DocNum": "F001-004",
+            "DocType": "Factura",
+            "CardCode": "C004",
+            "CardName": "CONSTRUCCIONES MODERNAS S.A.C.",
+            
+            "DocDate": "2024-03-18T00:00:00Z",
+            "DueDate": "2024-04-18T00:00:00Z",
+            "Currency": "SOL",
+            "Total": 4200.00,
+            "Balance": 4200.00,
+            "BankCode": "BCP",
+            "BankName": "BANCO DE CREDITO",
+            "AccountCode": "1041101",
+            "AccountName": "CUENTA CORRIENTE BCP",
+            "CuentaBancaria": "19394614129025"
+        },
+        {
+            "DocEntry": 1005,
+            "DocNum": "02E001-4",
+            "CardCode": "PL10710340434",
+            "CardName": "ALARCON RAMIREZ ANGIE FABIOLA",
+            "DocType": "Recibo por honorarios",
+            "DocDate": "2024-03-19T00:00:00Z",
+            "DueDate": "2024-04-19T00:00:00Z",
+            "Currency": "SOL",
+            "Total": 1800.25,
+            "Balance": 1800.25,
+            "BankCode": "BCP",
+            "BankName": "BANCO DE CREDITO",
+            "AccountCode": "1041101",
+            "AccountName": "CUENTA CORRIENTE BCP",
+            "CuentaBancaria": "19394614129025"
+        },
+        {
+            "DocEntry": 1006,
+            "DocNum": "F001-006",
+            "CardCode": "C006",
+            "CardName": "IMPORTADORA DEL SUR S.A.",
+            "DocType": "Factura",
+            "DocDate": "2024-03-20T00:00:00Z",
+            "DueDate": "2024-04-20T00:00:00Z",
+            "Currency": "SOL",
+            "Total": 3200.00,
+            "Balance": 3200.00,
+            "BankCode": "BCP",
+            "BankName": "BANCO DE CREDITO",
+            "AccountCode": "1041101",
+            "AccountName": "CUENTA CORRIENTE BCP",
+            "CuentaBancaria": "19394614129025"
+        },
+        {
+            "DocEntry": 1007,
+            "DocNum": "F001-007",
+            "CardCode": "C007",
+            "CardName": "LOGISTICA EXPRES S.A.C.",
+            "DocType": "Factura",
+            "DocDate": "2024-03-21T00:00:00Z",
+            "DueDate": "2024-04-21T00:00:00Z",
+            "Currency": "SOL",
+            "Total": 950.50,
+            "Balance": 950.50,
+            "BankCode": "BCP",
+            "BankName": "BANCO DE CREDITO",
+            "AccountCode": "1041101",
+            "AccountName": "CUENTA CORRIENTE BCP",
+            "CuentaBancaria": "19394614129025"
+        },
+        {
+            "DocEntry": 1008,
+            "DocNum": "F001-008",
+            "CardCode": "C008",
+            "CardName": "CONSULTORIA EMPRESARIAL S.A.",
+            "DocType": "Factura",
+            "DocDate": "2024-03-22T00:00:00Z",
+            "DueDate": "2024-04-22T00:00:00Z",
+            "Currency": "SOL",
+            "Total": 2800.00,
+            "Balance": 2800.00,
+            "BankCode": "BCP",
+            "BankName": "BANCO DE CREDITO",
+            "AccountCode": "1041101",
+            "AccountName": "CUENTA CORRIENTE BCP",
+            "CuentaBancaria": "19394614129025"
+        },
+        {
+            "DocEntry": 1009,
+            "DocNum": "F001-009",
+            "CardCode": "C009",
+            "CardName": "PRODUCTOS NATURALES E.I.R.L.",
+            "DocType": "Factura",
+            "DocDate": "2024-03-23T00:00:00Z",
+            "DueDate": "2024-04-23T00:00:00Z",
+            "Currency": "SOL",
+            "Total": 1650.75,
+            "Balance": 1650.75,
+            "BankCode": "SCT",
+            "BankName": "SCOTIABANK",
+            "AccountCode": "1041101",
+            "AccountName": "CUENTA CORRIENTE BCP",
+            "CuentaBancaria": "19394614129025"
+        },
+        {
+            "DocEntry": 1010,
+            "DocNum": "S001-293072",
+            "CardCode": "PL20552504641",
+            "CardName": "WIN EMPRESAS S.A.C.",
+            "DocType": "Factura",
+            "DocDate": "2024-03-24T00:00:00Z",
+            "DueDate": "2024-04-24T00:00:00Z",
+            "Currency": "SOL",
+            "Total": 4100.00,
+            "Balance": 4100.00,
+            "BankCode": "SCT",
+            "BankName": "SCOTIABANK",
+            "AccountCode": "1041101",
+            "AccountName": "CUENTA CORRIENTE BCP",
+            "CuentaBancaria": "19394614129025"
+        }
+    ],
+
+    "suppliers": [
+        {
+            "key": "C001",
+            "name": "EMPRESA COMERCIAL ABC S.A.C."
+        },
+        {
+            "key": "C002",
+            "name": "DISTRIBUIDORA XYZ E.I.R.L."
+        },
+        {
+            "key": "C003",
+            "name": "SERVICIOS INTEGRALES S.A."
+        },
+        {
+            "key": "C004",
+            "name": "CONSTRUCCIONES MODERNAS S.A.C."
+        },
+        {
+            "key": "C005",
+            "name": "TECNOLOGIA AVANZADA E.I.R.L."
+        },
+        {
+            "key": "C006",
+            "name": "IMPORTADORA DEL SUR S.A."
+        },
+        {
+            "key": "C007",
+            "name": "LOGISTICA EXPRES S.A.C."
+        },
+        {
+            "key": "C008",
+            "name": "CONSULTORIA EMPRESARIAL S.A."
+        },
+        {
+            "key": "C009",
+            "name": "PRODUCTOS NATURALES E.I.R.L."
+        },
+        {
+            "key": "C010",
+            "name": "SERVICIOS FINANCIEROS S.A."
+        },
+        {
+            "key": "PL10710340434",
+            "name": "ALARCON RAMIREZ ANGIE FABIOLA"
+        },
+        {
+            "key": "PL20552504641",
+            "name": "WIN EMPRESAS S.A.C."
+        }
+    ],
+
+    "banks": [
+        {
+            "key": "BCP",
+            "name": "BANCO DE CREDITO"
+        },
+        {
+            "key": "SCT",
+            "name": "SCOTIABANK"
+        }
+    ],
+    "docTypes": [
+        {
+            "key": "Factura",
+            "name": "Factura"
+        },
+        {
+            "key": "Recibo por honorarios",
+            "name": "Recibo por honorarios"
+        }
+    ]
+} 

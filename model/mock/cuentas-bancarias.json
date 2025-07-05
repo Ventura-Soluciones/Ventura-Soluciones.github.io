@@ -1,0 +1,47 @@
+{
+    "@odata.context": "https://192.168.1.14:50000/b1s/v2/$metadata#HouseBankAccounts",
+    "value": [
+        {
+            "BankCode": "BBVA",
+            "AccNo": "0011-0349-0200005331",
+            "Branch": "SOL",
+            "GLAccount": "1041105"
+        },
+        {
+            "BankCode": "BBVA",
+            "AccNo": "0011-0349-0100040644",
+            "Branch": "SOL",
+            "GLAccount": "1041104"
+        },
+        {
+            "BankCode": "BBVA",
+            "AccNo": "0011-0349-0100040652",
+            "Branch": "USD",
+            "GLAccount": "1041106"
+        },
+        {
+            "BankCode": "BCP",
+            "AccNo": "194-1985504-0-94",
+            "Branch": "SOL",
+            "GLAccount": "1041101"
+        },
+        {
+            "BankCode": "BCP",
+            "AccNo": "194-1981531-1-73",
+            "Branch": "USD",
+            "GLAccount": "1041103"
+        },
+        {
+            "BankCode": "BCP",
+            "AccNo": "191-00486203-0-13",
+            "Branch": "SOL",
+            "GLAccount": "1041102"
+        },
+        {
+            "BankCode": "BNP",
+            "AccNo": "00-093-014561",
+            "Branch": "SOL",
+            "GLAccount": "1042101"
+        }
+    ]
+}

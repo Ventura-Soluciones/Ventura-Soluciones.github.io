@@ -1,0 +1,356 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:fo="sap.f"
+    xmlns:mdc="sap.ui.mdc"
+    xmlns:l="sap.ui.layout"
+    xmlns:unified="sap.ui.unified"
+    xmlns:mdct="sap.ui.mdc.table"
+    xmlns:vm="sap.ui.fl.variants"
+    xmlns:mdcvh="sap.ui.mdc.valuehelp"
+    xmlns:mdcvc="sap.ui.mdc.valuehelp.content"
+    xmlns:ce="sap.ui.codeeditor"
+    xmlns:svm="sap.ui.comp.smartvariants"
+    xmlns:fb="sap.ui.comp.filterbar">
+
+    <VBox height="100%">
+        <!-- Fixed Header -->
+        <Toolbar design="Solid">
+            <Button text="Volver" icon="sap-icon://nav-back" press="onBackToPagosMasivos" type="Transparent" class="sapUiMediumMarginEnd" />
+            <ToolbarSpacer />
+        </Toolbar>
+
+        <!-- Scrollable Content Area -->
+        <ScrollContainer height="100%" vertical="true" class="sapUiNoContentPadding">
+            <VBox class="sapUiMediumMargin">
+                <f:SimpleForm editable="{
+                path: 'planilla>/U_ESTADO',
+                formatter: '.formatter.isEditable'
+            }" layout="ResponsiveGridLayout" title="Detalle de Planilla" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2" singleContainerFullSize="false">
+                    <f:content>
+                        <core:Title text="General" />
+                        <Label text="N° Planilla" />
+                        <Text text="{planilla>/DocEntry}" />
+
+                        <Label text="Cuenta Bancaria" />
+                        <ComboBox selectedKey="{planilla>/U_CUENTA}" items="{cuentasBancarias>/value}" change="onCuentaBancariaChange" selectionChange="onCuentaBancariaChange" enabled="{
+                        path: 'planilla>/isNewPlanilla',
+                        formatter: '.formatter.isNewPlanilla'
+                    }">
+                            <core:Item key="{cuentasBancarias>AccNo}" text="{cuentasBancarias>BankCode} - {cuentasBancarias>AccNo} - {cuentasBancarias>Branch}" />
+                        </ComboBox>
+
+                        <Label text="Banco" />
+                        <Text text="{planilla>/U_IDBANCO} - {planilla>/U_NMBANCO} - {planilla>/U_MONEDA}" />
+
+                        <Label text="Cuenta Contable" />
+                        <Text text="{planilla>/U_GLACCOUNT}" />
+
+                        <Label text="Estado" />
+                        <ObjectStatus text="{
+                        path: 'planilla>/U_ESTADO',
+                        formatter: '.formatter.estadoText'
+                    }" state="{
+                        path: 'planilla>/U_ESTADO',
+                        formatter: '.formatter.status'
+                    }" />
+
+                        <Label text="Fecha de creación" />
+                        <Text text="{
+                    path: 'planilla>/U_FECHA',
+                    formatter: '.formatter.date'
+                }" />
+
+                        <core:Title text="Datos de pago" />
+
+                        <Label text="Serie" />
+                        <ComboBox selectedKey="{planilla>/U_SERIE}" items="{series>/value}" change="onSerieChange" selectionChange="onSerieChange">
+                            <core:Item key="{series>Series}" text="{series>Name}" />
+                        </ComboBox>
+
+                        <Label text="Fecha de ejecución" />
+                        <DatePicker value="{
+                        path: 'planilla>/U_FECHAP',
+                        type: 'sap.ui.model.type.Date',
+                        formatOptions: {
+                            source: {
+                                pattern: 'yyyy-MM-ddTHH:mm:ssZ'
+                            }
+                        }
+                    }" displayFormat="dd MMM yyyy" change="onFechaEjecucionChange" />
+
+                        <Label text="Tipo de cambio" />
+                        <Input value="{planilla>/U_TC}" editable="false" />
+
+                        <Label text="ID SAP" />
+                        <Input value="{planilla>/U_IDPAGO}" editable="false" />
+
+                        <Label text="Nro Operación bancaria" />
+                        <Input value="{planilla>/U_NOPBAN}" />
+
+                        <core:Title text="Información Adicional	" />
+                        <Label text="Referencia" />
+                        <Text text="{planilla>/U_REF}" />
+                    </f:content>
+                </f:SimpleForm>
+
+                <!-- Tabla de documentos de la planilla -->
+                <Panel headerText="Documentos de la Planilla" class="sapUiMediumMarginTop">
+                    <Table id="planillaLinesTable" items="{planilla>/VS_PMP1Collection}" mode="MultiSelect" growing="true" growingThreshold="10" class="sapUiMediumMarginTop">
+                        <columns>
+                            <Column width="auto">
+                                <Text text="Línea" />
+                            </Column>
+                            <Column width="auto">
+                                <Text text="N° Documento" />
+                            </Column>
+                            <Column width="auto">
+                                <Text text="Cód. Proveedor" />
+                            </Column>
+                            <Column width="auto">
+                                <Text text="Razón Social" />
+                            </Column>
+
+                            <Column width="auto">
+                                <Text text="Fecha Emisión" />
+                            </Column>
+                            <Column width="auto">
+                                <Text text="Fecha Venc." />
+                            </Column>
+                            <Column width="auto" hAlign="End">
+                                <Text text="Monto" />
+                            </Column>
+
+                            <Column width="auto" hAlign="End">
+                                <Text text="Saldo" />
+                            </Column>
+                            <Column width="auto" hAlign="End">
+                                <Text text="Retención" />
+                            </Column>
+                            <Column width="auto" hAlign="End">
+                                <Text text="Pago Final" />
+                            </Column>
+                            <Column width="auto">
+                                <Text text="Banco" />
+                            </Column>
+                            <Column width="auto">
+                                <Text text="Cuenta bancaria" />
+                            </Column>
+                        </columns>
+
+                        <items>
+                            <ColumnListItem type="Active">
+                                <cells>
+                                    <Text text="{planilla>LineId}" />
+                                    <Text text="{planilla>U_NUMDOC}" />
+                                    <Text text="{planilla>U_IDSN}" />
+                                    <Text text="{planilla>U_NMSN}" />
+                                    <Text text="{
+                                path: 'planilla>U_FDOCU',
+                                formatter: '.formatter.date'
+                            }" />
+                                    <Text text="{
+                                path: 'planilla>U_FVENC',
+                                formatter: '.formatter.date'
+                            }" />
+                                    <ObjectNumber number="{
+                                    path: 'planilla>U_IMPORTE',
+                                    formatter: '.formatter.currency'
+                                }" unit="{planilla>U_MONINF}" />
+
+                                    <ObjectNumber number="{
+                                    path: 'planilla>U_SALDO',
+                                    formatter: '.formatter.currency'
+                                }" unit="{planilla>U_MONINF}" />
+
+                                    <ObjectNumber number="{
+                                    path: 'planilla>U_RETLOC',
+                                    formatter: '.formatter.currency'
+                                }" unit="{planilla>U_MONINF}" />
+                                    <ObjectNumber number="{
+                                    path: 'planilla>U_PAGLOC0',
+                                    formatter: '.formatter.currency'
+                                }" unit="{planilla>U_MONINF}" />
+
+                                    <Text text="{planilla>U_CTAINF}" />
+                                    <Text text="{planilla>U_CCORRI}" />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+
+                    <!-- Footer-->
+                    <HBox justifyContent="End" class="sapUiMediumMarginTop">
+                        <VBox alignItems="End" class="sapUiMediumMarginEnd">
+                            <HBox class="sapUiTinyMarginBottom">
+                                <Label text="Total Documentos:" class="sapUiTinyMarginEnd" />
+                                <Text text="{= ${planilla>/VS_PMP1Collection}.length}" class="sapUiTinyMarginEnd" />
+                            </HBox>
+                            <HBox class="sapUiTinyMarginBottom">
+                                <Label text="Total Bruto:" class="sapUiTinyMarginEnd" />
+                                <ObjectNumber number="{
+                                path: 'planilla>/U_TOTAL',
+                                formatter: '.formatter.currency'
+                            }" unit="{planilla>/U_MONEDA}" />
+                            </HBox>
+
+                            <HBox class="sapUiTinyMarginBottom">
+                                <Label text="Total Retenciones:" class="sapUiTinyMarginEnd" />
+                                <ObjectNumber number="{
+                                path: 'planilla>/U_RETEN',
+                                formatter: '.formatter.negativeCurrency'
+                            }" unit="{planilla>/U_MONEDA}" />
+                            </HBox>
+
+                            <HBox class="sapUiTinyMarginBottom">
+                                <Label text="Total Neto:" class="sapUiTinyMarginEnd" />
+                                <ObjectNumber number="{
+                                path: 'planilla>/U_SUBTOTAL',
+                                formatter: '.formatter.currency'
+                            }" unit="{planilla>/U_MONEDA}" />
+                            </HBox>
+                        </VBox>
+                    </HBox>
+                </Panel>
+            </VBox>
+        </ScrollContainer>
+
+        <!-- Modal de selección de documentos -->
+        <Dialog id="documentSelectionDialog" title="Seleccionar Documentos" contentWidth="80%" contentHeight="60%" resizable="false" draggable="true">
+            <content>
+                <fo:DynamicPage headerExpanded="{/headerExpanded}">
+                    <fo:header>
+                        <fo:DynamicPageHeader pinnable="false">
+                            <fo:content>
+                                <fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false">
+                                    <fb:filterGroupItems>
+                                        <fb:FilterGroupItem name="Name" label="Tipo Documento" groupName="Group1" visibleInFilterBar="true">
+                                            <fb:control>
+                                                <MultiComboBox name="Name" selectionChange=".onSelectionChange" items="{
+												path: 'oModel>/docTypes'
+											}">
+                                                    <core:Item key="{oModel>key}" text="{oModel>name}" />
+                                                </MultiComboBox>
+                                            </fb:control>
+                                        </fb:FilterGroupItem>
+                                        <fb:FilterGroupItem name="Category" label="Proveedor" groupName="Group1" visibleInFilterBar="true">
+                                            <fb:control>
+                                                <MultiComboBox name="Category" selectionChange=".onSelectionChange" items="{
+												path: 'oModel>/suppliers',
+												templateShareable: true
+											}">
+                                                    <core:Item key="{oModel>key}" text="{oModel>name}" />
+                                                </MultiComboBox>
+                                            </fb:control>
+                                        </fb:FilterGroupItem>
+                                        <fb:FilterGroupItem name="SupplierName" label="Banco" groupName="Group1" visibleInFilterBar="true">
+                                            <fb:control>
+                                                <MultiComboBox name="SupplierName" selectionChange=".onSelectionChange" items="{
+												path: 'oModel>/banks'
+											}">
+                                                    <core:Item key="{oModel>key}" text="{oModel>name}" />
+                                                </MultiComboBox>
+                                            </fb:control>
+                                        </fb:FilterGroupItem>
+
+                                        <fb:FilterGroupItem name="ReleaseDate" label="Fecha de documento" groupName="Group1" visibleInFilterBar="true">
+                                            <fb:control>
+                                                <DateRangeSelection name="ReleaseDate" displayFormat="yyyy-MM-dd" valueFormat="yyyy-MM-dd" change=".onDateRangeChange" />
+                                            </fb:control>
+                                        </fb:FilterGroupItem>
+                                    </fb:filterGroupItems>
+                                </fb:FilterBar>
+                            </fo:content>
+                        </fo:DynamicPageHeader>
+                    </fo:header>
+                    <fo:content>
+                        <Table id="table" items="{
+						path: 'oModel>/documents'
+					}" mode="MultiSelect" selectionChange="onDocumentSelectionChange" growing="false" growingThreshold="0" noDataText="No hay documentos disponibles">
+                            <columns>
+                                <Column>
+                                    <Text text="Documento" />
+                                </Column>
+                                <Column>
+                                    <Text text="Proveedor" />
+                                </Column>
+                                <Column>
+                                    <Text text="F. Emisión" />
+                                </Column>
+                                <Column>
+                                    <Text text="F. Vencimiento" />
+                                </Column>
+                                <Column>
+                                    <Text text="Monto" />
+                                </Column>
+                                <Column>
+                                    <Text text="Saldo" />
+                                </Column>
+                                <Column>
+                                    <Text text="Retención" />
+                                </Column>
+                                <Column>
+                                    <Text text="Pago Final" />
+                                </Column>
+                                <Column>
+                                    <Text text="Banco" />
+                                </Column>
+                                <Column>
+                                    <Text text="Cuenta bancaria" />
+                                </Column>
+                            </columns>
+
+                            <items>
+                                <ColumnListItem type="Active" class="{= ${oModel>alreadyInPlanilla} ? 'sapUiTableRowDisabled' : ''}">
+                                    <cells>
+                                        <HBox alignItems="Center">
+                                            <ObjectIdentifier title="{oModel>DocNum}" text="{oModel>DocType}" />
+                                            <ObjectStatus visible="{oModel>alreadyInPlanilla}" text="Ya agregado" state="Warning" class="sapUiTinyMarginBegin" />
+                                        </HBox>
+
+                                        <ObjectIdentifier title="{oModel>CardCode}" text="{oModel>CardName}" />
+
+                                        <Text text="{
+                                    path: 'oModel>DocDate',
+                                    formatter: '.formatter.date'
+                                }" />
+
+                                        <Text text="{
+                                    path: 'oModel>DueDate',
+                                    formatter: '.formatter.date'
+                                }" />
+
+                                        <ObjectNumber number="{
+                                        path: 'oModel>Total',
+                                        formatter: '.formatter.currency'
+                                    }" unit="{oModel>Currency}" />
+                                        <ObjectNumber number="{
+                                    path: 'oModel>Balance',
+                                    formatter: '.formatter.currency'
+                                }" unit="{oModel>Currency}" />
+                                        <ObjectNumber number="{
+                                    path: 'oModel>RetLoc',
+                                    formatter: '.formatter.currency'
+                                }" unit="{oModel>Currency}" />
+                                        <ObjectNumber number="{
+                                    path: 'oModel>Balance',
+                                    formatter: '.formatter.currency'
+                                }" unit="{oModel>Currency}" />
+                                        <ObjectIdentifier title="{oModel>BankCode}" text="{oModel>BankName}" />
+                                        <Text text="{oModel>CuentaBancaria}" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </fo:content>
+                </fo:DynamicPage>
+            </content>
+
+
+            <buttons>
+                <Button text="Cancelar" press="onDocumentDialogCancel" />
+                <Button text="Agregar" type="Accept" press="onDocumentDialogConfirm" />
+            </buttons>
+        </Dialog>
+    </VBox>
+</core:FragmentDefinition>

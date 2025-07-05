@@ -1,0 +1,27 @@
+<mvc:View height="100%" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.f" xmlns:fly="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:tnt="sap.tnt" controllerName="com.vs.extension.finanb1.controller.App">
+	<tnt:ToolPage id="toolPage2">
+		<tnt:header>
+			<tnt:ToolHeader id="toolHeader2" >
+				<Image src="img/banner.png" height="25px" width="120px"/>
+				<Button icon="sap-icon://menu2" press="onMenuButtonPress"/>
+				<Title text="FinanB1" level="H5"/>
+				
+				<ToolbarSpacer/>
+				<Button icon="sap-icon://log" press="onLogout"/>
+				
+
+			</tnt:ToolHeader>
+		</tnt:header>
+		<tnt:sideContent>
+			<core:Fragment fragmentName="com.vs.extension.finanb1.view.SideNavigation" type="XML"/>
+		</tnt:sideContent>
+		<tnt:mainContents>
+
+      
+        <App id="app"/>
+      
+
+
+		</tnt:mainContents>
+	</tnt:ToolPage>
+</mvc:View>

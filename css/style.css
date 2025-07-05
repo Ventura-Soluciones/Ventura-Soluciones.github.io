@@ -1,0 +1,30 @@
+/* Enter your custom styles here */
+
+/* Styles for disabled table rows */
+.sapUiTableRowDisabled {
+    opacity: 0.6;
+    background-color: #f5f5f5 !important;
+}
+
+.sapUiTableRowDisabled .sapMText,
+.sapUiTableRowDisabled .sapMObjectNumber,
+.sapUiTableRowDisabled .sapMObjectStatus {
+    color: #666 !important;
+}
+
+/* Warning status styling */
+.sapMObjectStatusWarning {
+    font-size: 0.75rem;
+}
+
+/* Data source switch styling */
+.dataSourceSwitchContainer {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 8px 12px;
+}
+
+.dataSourceSwitchContainer .sapMSwt {
+    margin: 0 4px;
+}

@@ -1,0 +1,96 @@
+{
+  "sap.app": {
+    "id": "com.vs.extension.finanb1",
+    "type": "application",
+    "title": "FinanB1 - Pagos Masivos",
+    "description": "Aplicación de Pagos Masivos con SmartTable"
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": false
+    }
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "com.vs.extension.finanb1.view.App",
+      "type": "XML",
+      "id": "app"
+    },
+    "dependencies": {
+      "minUI5Version": "1.76.0",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {},
+        "sap.ui.layout": {},
+        "sap.ui.unified": {},
+        "sap.suite.ui.commons": {},
+        "sap.ui.comp": {}
+      }
+    },
+    "models": {
+      "": {
+        "type": "sap.ui.model.json.JSONModel",
+        "settings": {}
+      },
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.vs.extension.finanb1.i18n.i18n"
+        }
+      }
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "com.vs.extension.finanb1.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "async": true
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "RouteLogin",
+          "target": "Login"
+        },
+        {
+          "pattern": "pagosmasivos",
+          "name": "RoutePagosMasivos",
+          "target": "PagosMasivos"
+        },
+        {
+          "pattern": "pagosmasivos/{planillaId}",
+          "name": "RoutePagosMasivosDetalle",
+          "target": "PagosMasivosDetalle"
+        }
+      ],
+      "targets": {
+        "Login": {
+          "viewName": "Login",
+          "viewLevel": 1
+        },
+        "PagosMasivos": {
+          "viewName": "PagosMasivos",
+          "viewLevel": 2
+        },
+        "PagosMasivosDetalle": {
+          "viewName": "PagosMasivosDetalle",
+          "viewLevel": 3
+        }
+      }
+    }
+  },
+  "sap.platform.abap": {
+    "uri": "/sap/opu/odata/sap/ZFINANB1_SRV/"
+  },
+  "sap.platform.hcp": {
+    "uri": "https://your-hcp-instance.com/odata/v2/"
+  },
+  "sap.platform.cf": {
+    "uri": "https://your-cf-app.cfapps.eu10.hana.ondemand.com/odata/v2/"
+  }
+} 

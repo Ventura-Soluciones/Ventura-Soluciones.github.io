@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:tnt="sap.tnt">
+	<tnt:SideNavigation expanded="true" selectedKey="{menuModel>/selectedKey}" itemSelect="onSideNavigationItemSelect">
+		<tnt:NavigationList items="{menuModel>/navigation}">
+			<tnt:NavigationListItem 
+				text="{menuModel>text}" 
+				icon="{menuModel>icon}" 
+				key="{menuModel>key}"
+				selectable="true" />
+		</tnt:NavigationList>
+	</tnt:SideNavigation>
+</core:FragmentDefinition>

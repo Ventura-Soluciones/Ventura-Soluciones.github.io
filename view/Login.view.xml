@@ -1,0 +1,59 @@
+<!-- @ts-ignore -->
+<mvc:View controllerName="com.vs.extension.finanb1.controller.Login"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core">
+    <Page id="loginPage" title="FinanB1 - Login" showHeader="false" class="sapUiSizeCompact">
+        <content>
+            <VBox alignItems="Center" justifyContent="Center" height="100%" class="sapUiMediumMargin">
+                <VBox width="400px" class="sapUiMediumMargin">
+                    <!-- Logo and Title -->
+                    <VBox alignItems="Center" class="sapUiMediumMarginBottom">
+                        <Image src="img/banner.png" width="200px" class="sapUiMediumMarginBottom"/>
+                        <Title text="FinanB1" level="H1" class="sapUiMediumMarginBottom"/>
+                        <Text text="Sistema de Gestión Financiero" class="sapUiMediumMarginBottom"/>
+                    </VBox>
+                    
+                    <!-- Login Form -->
+                    <Panel headerText="Iniciar Sesión" class="sapUiMediumMarginBottom">
+                        <VBox class="sapUiMediumMargin">
+                            <Label text="Email" labelFor="usernameInput" class="sapUiTinyMarginBottom"/>
+                            <Input id="usernameInput" 
+                                   placeholder="Ingrese su email" 
+                                   class="sapUiTinyMarginBottom"
+                                   value="{loginModel>/username}"
+                                   liveChange="onKeyPress"/>
+                            
+                            <Label text="Contraseña" labelFor="passwordInput" class="sapUiTinyMarginBottom"/>
+                            <Input id="passwordInput" 
+                                   type="Password" 
+                                   placeholder="Ingrese su contraseña" 
+                                   class="sapUiTinyMarginBottom"
+                                   value="{loginModel>/password}"
+                                   liveChange="onKeyPress"/>
+                            
+                            <HBox justifyContent="SpaceBetween" alignItems="Center" class="sapUiTinyMarginTop">
+                                <CheckBox text="Recordar sesión" selected="{loginModel>/rememberMe}"/>
+                                <Link text="¿Olvidó su contraseña?" press="onForgotPassword"/>
+                            </HBox>
+                            
+                            <Button id="loginButton"
+                                    text="Iniciar Sesión" 
+                                    type="Emphasized" 
+                                    width="100%" 
+                                    class="sapUiMediumMarginTop"
+                                    press="onLoginPress"/>
+                        </VBox>
+                    </Panel>
+                    
+                    <!-- Footer -->
+                    <VBox alignItems="Center" class="sapUiTinyMarginTop">
+                        <Text text="Un producto de Ventura Soluciones" class="sapUiTinyMarginBottom"/>
+                        <Text text="© 2025 Todos los derechos reservados" class="sapUiTinyMarginBottom"/>
+                    </VBox>
+                </VBox>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

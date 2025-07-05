@@ -1,0 +1,193 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "com.vs.extension.finanb1",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.17.5",
+      "toolsId": "5ba13c26-0210-42cc-9bcd-9adbff83c026"
+    },
+
+    "dataSources": {
+			"mountains" : {
+				"uri": "model/mountains.json",
+				"type": "JSON"
+			}
+		}
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "config": {
+			"sample": {
+				"files": [
+					"controller/FilterbarTypes.controller.js",
+					"delegate/JSONFilterBarDelegate.js",
+					"model/metadata/JSONPropertyInfo.js",
+					"view/FilterbarTypes.view.xml",
+					"model/mountains.json",
+					"model/formatter.js",
+					"manifest.json"
+				]
+			}
+		},
+    
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.136.2",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.tnt": {},
+        "sap.ui.mdc": {},
+        "sap.f": {},
+        "sap.ui.fl": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.vs.extension.finanb1.i18n.i18n"
+        }
+      },
+      "": {
+        "type": "sap.ui.model.json.JSONModel",
+        "settings": {}
+      },
+      "mountains": {
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "mountains"
+      }
+
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "com.vs.extension.finanb1.view",
+        "async": true,
+        "viewPath": "com.vs.extension.finanb1.view"
+      },
+      "routes": [
+        {
+          "name": "RouteLogin",
+          "pattern": "",
+          "target": [
+            "TargetLogin"
+          ]
+        },
+
+        {
+          "name": "RouteConfiguracion",
+          "pattern": "configuracion",
+          "target": [
+            "TargetConfiguracion"
+          ]
+        },
+        {
+          "name": "RoutePagosMasivos",
+          "pattern": "pagos-masivos",
+          "target": [
+            "TargetPagosMasivos"
+          ]
+        },
+        {
+          "name": "RoutePagosMasivosDetalle",
+          "pattern": "pagos-masivos/{planillaId}",
+          "target": [
+            "TargetPagosMasivosDetalle"
+          ]
+        },
+        {
+          "name": "RouteDetracciones",
+          "pattern": "detracciones",
+          "target": [
+            "TargetDetracciones"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetLogin": {
+          "id": "Login",
+          "name": "Login",
+          "viewName": "Login",
+          "viewId": "Login",
+          "viewPath": "com.vs.extension.finanb1.view"
+        },
+
+        "TargetConfiguracion": {
+          "id": "Configuracion",
+          "name": "Configuracion",
+          "viewName": "Configuracion",
+          "viewId": "Configuracion",
+          "viewPath": "com.vs.extension.finanb1.view"
+        },
+        "TargetPagosMasivos": {
+          "id": "PagosMasivos",
+          "name": "PagosMasivos",
+          "viewName": "PagosMasivos",
+          "viewId": "PagosMasivos",
+          "viewPath": "com.vs.extension.finanb1.view"
+        },
+        "TargetPagosMasivosDetalle": {
+          "id": "PagosMasivosDetalle",
+          "name": "PagosMasivosDetalle",
+          "viewName": "PagosMasivosDetalle",
+          "viewId": "PagosMasivosDetalle",
+          "viewPath": "com.vs.extension.finanb1.view"
+        },
+        "TargetDetracciones": {
+          "id": "Detracciones",
+          "name": "Detracciones",
+          "viewName": "Detracciones",
+          "viewId": "Detracciones",
+          "viewPath": "com.vs.extension.finanb1.view"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "com.vs.extension.finanb1.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

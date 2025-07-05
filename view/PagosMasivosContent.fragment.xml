@@ -1,0 +1,89 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <VBox>
+        <Toolbar
+            design="Solid"
+            class="sapUiSticky">
+            
+            <ToolbarSpacer/>
+            <Label text="Rango de Fechas:" class="sapUiMediumMarginEnd" width="120px"/>
+            <DateRangeSelection
+                id="pagosMasivosDateRangeFilter"
+                displayFormat="dd/MM/yyyy"
+                change="onDateRangeChange"
+                class="sapUiMediumMarginEnd"/>
+            <Label text="Estado:" class="sapUiMediumMarginEnd" width="80px"/>
+            <Select
+                id="pagosMasivosStatusFilter"
+                width="150px"
+                change="onStatusChange"
+                class="sapUiMediumMarginEnd">
+                <core:Item key="" text="Todos"/>
+                <core:Item key="E" text="Ejecutada"/>
+                <core:Item key="A" text="Anulada"/>
+                <core:Item key="C" text="Creada"/>
+            </Select>
+            <Label text="Banco:" class="sapUiMediumMarginEnd" width="80px"/>
+            <Select
+                id="pagosMasivosBancoFilter"
+                width="150px"
+                change="onBancoChange"
+                class="sapUiMediumMarginEnd">
+                <core:Item key="" text="Todos"/>
+                <core:Item key="BCP" text="BCP"/>
+                <core:Item key="BBVA" text="BBVA"/>
+                <core:Item key="Interbank" text="Interbank"/>
+                <core:Item key="Scotiabank" text="Scotiabank"/>
+            </Select>
+            <Button
+                text="Limpiar Filtros"
+                icon="sap-icon://clear-filter"
+                press="onClearFilters"
+                type="Transparent"
+                class="sapUiMediumMarginEnd"/>
+            <ToolbarSeparator/>
+            <Button
+                text="Nueva Planilla"
+                icon="sap-icon://add"
+                press="onNuevaPlanillaButtonPress"
+                type="Emphasized"/>
+        </Toolbar>
+        
+        <List
+            id="pagosMasivosPlanillasList"
+            items="{planillas>/PlanillasCollection}"
+            headerText="Planillas de pagos masivos"
+            growing="true"
+            growingThreshold="5"
+            growingScrollToLoad="true"
+            class="sapUiMediumMarginTop"
+            itemPress="onListItemPress">
+            <ObjectListItem
+                type="Active"
+                title="Planilla: {planillas>U_IDBANCO} - {planillas>DocEntry}"
+                >
+
+                <ObjectAttribute text="Banco: {planillas>U_IDBANCO}" />
+                <ObjectAttribute text="Cuenta Bancaria: {planillas>U_CCBANCO}" />
+                <ObjectAttribute text="Moneda: {planillas>U_MONEDA}" />
+                <ObjectAttribute text="Fecha de emisión: {
+                    path: 'planillas>U_FECHA',
+                    formatter: '.formatter.date'
+                }" />
+                <ObjectAttribute text="Total: {planillas>U_TOTAL}" />
+
+                <firstStatus>
+                    <ObjectStatus
+                        text="{
+                            path: 'planillas>U_ESTADO',
+                            formatter: '.formatter.estadoText'
+                        }"
+                        state="{
+                            path: 'planillas>U_ESTADO',
+                            formatter: '.formatter.status'
+                        }" />
+                </firstStatus>
+
+            </ObjectListItem>
+        </List>
+    </VBox>
+</core:FragmentDefinition> 
