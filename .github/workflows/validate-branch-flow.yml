@@ -1,0 +1,63 @@
+name: Validate branch flow
+
+on:
+  pull_request:
+    branches:
+      - main
+      - release
+      - development
+
+jobs:
+  validate-branch-flow:
+    name: validate-branch-flow
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Validate PR source and target branch
+        shell: bash
+        run: |
+          SOURCE_BRANCH="${{ github.head_ref }}"
+          TARGET_BRANCH="${{ github.base_ref }}"
+
+          echo "Source branch: $SOURCE_BRANCH"
+          echo "Target branch: $TARGET_BRANCH"
+
+          is_hotfix=false
+          if [[ "$SOURCE_BRANCH" == hot-fix* ]]; then
+            is_hotfix=true
+          fi
+
+          # main solo recibe PR desde release o hot-fix*
+          if [[ "$TARGET_BRANCH" == "main" ]]; then
+            if [[ "$SOURCE_BRANCH" == "release" || "$is_hotfix" == "true" ]]; then
+              echo "OK: PR permitido hacia main."
+              exit 0
+            fi
+
+            echo "::error::Solo se permite PR hacia main desde release o ramas hot-fix*."
+            exit 1
+          fi
+
+          # release solo recibe PR desde development o hot-fix*
+          if [[ "$TARGET_BRANCH" == "release" ]]; then
+            if [[ "$SOURCE_BRANCH" == "development" || "$is_hotfix" == "true" ]]; then
+              echo "OK: PR permitido hacia release."
+              exit 0
+            fi
+
+            echo "::error::Solo se permite PR hacia release desde development o ramas hot-fix*."
+            exit 1
+          fi
+
+          # development recibe PR desde cualquier rama, excepto main y release
+          if [[ "$TARGET_BRANCH" == "development" ]]; then
+            if [[ "$SOURCE_BRANCH" == "main" || "$SOURCE_BRANCH" == "release" ]]; then
+              echo "::error::No se permite PR hacia development desde main ni release."
+              exit 1
+            fi
+
+            echo "OK: PR permitido hacia development desde cualquier rama excepto main/release."
+            exit 0
+          fi
+
+          echo "OK: branch destino fuera de la politica validada."
