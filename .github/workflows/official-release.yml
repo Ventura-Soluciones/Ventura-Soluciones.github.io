@@ -1,0 +1,43 @@
+name: Official Release
+
+on:
+  push:
+    tags:
+      - 'v*' # Se activa cuando se crea cualquier tag que empiece con 'v'
+
+jobs:
+  release:
+    # Solo ejecutar si el tag fue creado en la rama main
+    # Esto evita crear releases para tags de development o release branches
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check if tag is on main
+        id: check_branch
+        shell: bash
+        run: |
+          # Verificar si el tag actual pertenece a la historia de main
+          git fetch origin main
+          if git merge-base --is-ancestor ${{ github.ref_name }} origin/main; then
+            echo "on_main=true" >> $GITHUB_OUTPUT
+            echo "Confirmado: El tag ${{ github.ref_name }} esta en la rama main."
+          else
+            echo "on_main=false" >> $GITHUB_OUTPUT
+            echo "Aviso: El tag ${{ github.ref_name }} NO pertenece a main. Saltando release."
+          fi
+
+      - name: Create GitHub Release
+        if: steps.check_branch.outputs.on_main == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          generate_release_notes: true # Genera automaticamente el resumen de los PRs incluidos
+          draft: false
+          prerelease: false
