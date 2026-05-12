@@ -1,0 +1,93 @@
+name: Auto Tagging (GitFlow)
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+      - release
+      - development
+
+jobs:
+  tag:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create tag based on GitFlow
+        shell: bash
+        run: |
+          # Configurar Git
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Obtener el último tag
+          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
+          echo "Ultimo tag detectado: $LATEST_TAG"
+
+          VERSION=${LATEST_TAG#v}
+          IFS='.' read -r MAJOR MINOR PATCH <<< "$VERSION"
+
+          [[ -z "$MAJOR" ]] && MAJOR=0
+          [[ -z "$MINOR" ]] && MINOR=0
+          [[ -z "$PATCH" ]] && PATCH=0
+
+          SOURCE_BRANCH="${{ github.event.pull_request.head.ref }}"
+          TARGET_BRANCH="${{ github.event.pull_request.base.ref }}"
+          
+          echo "PR Fusionado: $SOURCE_BRANCH -> $TARGET_BRANCH"
+
+          NEW_MAJOR=$MAJOR
+          NEW_MINOR=$MINOR
+          NEW_PATCH=$PATCH
+
+          # LOGICA DE INCREMENTO (Basada en GitFlow y tus scripts)
+          
+          if [[ "$TARGET_BRANCH" == "main" ]]; then
+            if [[ "$SOURCE_BRANCH" == "release" ]]; then
+              # Paso de release a producción: Incremento MAJOR
+              NEW_MAJOR=$((MAJOR + 1))
+              NEW_MINOR=0
+              NEW_PATCH=0
+            elif [[ "$SOURCE_BRANCH" == hot-fix* ]]; then
+              # Hotfix directo a main: Incremento PATCH
+              NEW_PATCH=$((PATCH + 1))
+            fi
+          elif [[ "$TARGET_BRANCH" == "release" ]]; then
+            if [[ "$SOURCE_BRANCH" == "development" ]]; then
+              # Preparando nueva release: Incremento MINOR
+              NEW_MINOR=$((MINOR + 1))
+              NEW_PATCH=0
+            elif [[ "$SOURCE_BRANCH" == hot-fix* ]]; then
+              # Hotfix a release: Incremento PATCH
+              NEW_PATCH=$((PATCH + 1))
+            fi
+          elif [[ "$TARGET_BRANCH" == "development" ]]; then
+            # Cualquier PR a development (feature/*, bug-fix/*, etc.)
+            NEW_PATCH=$((PATCH + 1))
+          fi
+
+          NEW_VERSION="v$NEW_MAJOR.$NEW_MINOR.$NEW_PATCH"
+
+          if [[ "$NEW_VERSION" == "$LATEST_TAG" ]]; then
+            echo "No se detectaron cambios de version necesarios. Saltando."
+            exit 0
+          fi
+
+          echo "Nueva version calculada: $NEW_VERSION"
+
+          if git rev-parse "$NEW_VERSION" >/dev/null 2>&1; then
+            echo "Error: El tag $NEW_VERSION ya existe. Saltando para evitar duplicados."
+            exit 0
+          fi
+
+          git tag "$NEW_VERSION"
+          git push origin "$NEW_VERSION"
+          echo "Tag $NEW_VERSION creado y subido exitosamente."
